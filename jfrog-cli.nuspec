@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>jfrog-cli</id>
-    <version>1.21.0</version>
+    <version>1.21.1</version>
     <packageSourceUrl>https://github.com/jgeorgeson/jfrog-cli</packageSourceUrl>
     <title>JFrog CLI</title>
     <authors>JFrog Ltd</authors>
