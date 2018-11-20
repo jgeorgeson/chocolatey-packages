@@ -1,14 +1,6 @@
-~~~
-<!-- EDIT ME-->
-
-[![](https://ci.appveyor.com/api/projects/status/github/YOUR_GITHUB_USERNAME_HERE/chocolatey-packages?svg=true)](https://ci.appveyor.com/project/YOUR_GITHUB_USERNAME_HERE/chocolatey-packages)
-[Update status](https://gist.github.com/YOUR_GITHUB_USERNAME_HERE/YOUR_GIST_ID_HERE)
-[![](http://transparent-favicon.info/favicon.ico)](#)
-[chocolatey/YOUR_CHOCOLATEY_USERNAME_HERE](https://chocolatey.org/profiles/YOUR_CHOCOLATEY_USERNAME_HERE)
-
-<!-- EDIT ME-->
-<!-- REMOVE THE squiggles "~" surrounding this (this should not be a code block) -->
-~~~
+[![](https://ci.appveyor.com/api/projects/status/github/jgeorgeson/chocolatey-packages?svg=true)](https://ci.appveyor.com/project/jgeorgeson/chocolatey-packages)<br>
+[Update status](https://gist.github.com/jgeorgeson/062b8a43e0c34c874341651e7d5cf040)<br>
+[chocolatey/jgeorgeson](https://chocolatey.org/profiles/jgeorgeson)
 
 This repository contains [chocolatey automatic packages](https://chocolatey.org/docs/automatic-packages).  
 The repository is setup so that you can manage your packages entirely from the GitHub web interface (using AppVeyor to update and push packages) and/or using the local repository copy.
@@ -101,16 +93,13 @@ If there are no changes in the repository use `--allow-empty` git parameter:
     git commit -m '[AU copyq less:2.0]' --allow-empty
     git push
 
-## Start using AU with your own packages
+#### Attributions
 
-To use this system with your own packages do the following steps:
-
-* Fork this project. If needed, rename it to `au-packages`.
-* Delete all existing packages.
-* Edit the `README.md` header with your repository info.
-* Set your environment variables. See [AU wiki](https://github.com/majkinetor/au/wiki#environment-variables) for details.
-
-Add your own packages now, with this in mind:
-* You can keep both manual and automatic packages together. To get only AU packages any time use `Get-AUPackages` function (alias `lsau` or `gau`)
-* Keep all package additional files in the package directory (icons, screenshots etc.). This keeps everything related to one package in its own directory so it is easy to move it around or remove it.
- 
+* The [`jfrog-cli`](jfrog-cli) package was originally written by @kevinkabatra, transferred to @jgeorgeson in Nov 2018
+* The following automation scripts came from the majkinetor/au-packages-template project by @majkinator
+    * [`_scripts`](_scripts)
+    * [`.appveyor.yml`](.appveyor.yml)
+    * [`cinst-gh.ps1`](cinst-gh.ps1)
+    * [`test_all.ps1`](test_all.ps1)
+    * [`update_all.ps1`](update_all.ps1)
+    * [`update_vars_default.ps1`](update_vars_default.ps1)
