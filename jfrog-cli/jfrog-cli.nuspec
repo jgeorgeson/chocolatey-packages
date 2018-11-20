@@ -7,7 +7,7 @@
     <packageSourceUrl>https://github.com/jgeorgeson/jfrog-cli</packageSourceUrl>
     <title>JFrog CLI</title>
     <authors>JFrog Ltd</authors>
-    <owners>Kevin Kabatra</owners>
+    <owners>Justin Georgeson</owners>
     <projectUrl>https://www.jfrog.com/confluence/display/CLI/JFrog+CLI</projectUrl>
     <licenseUrl>https://github.com/jfrog/jfrog-cli-go/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
