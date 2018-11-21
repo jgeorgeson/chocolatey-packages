@@ -1,25 +1,30 @@
 import-module au
 
-$releases = 'https://github.com/jfrog/jfrog-cli-go/releases/latest'
-$url = 'https://bintray.com/jfrog/jfrog-cli-go/download_file?file_path='
+$pkgurl = 'https://api.bintray.com/packages/jfrog/jfrog-cli-go/jfrog-cli-windows-amd64'
+$fileurl = 'https://dl.bintray.com/jfrog/jfrog-cli-go/'
 
 function global:au_SearchReplace {
    @{
         ".\tools\chocolateyInstall.ps1" = @{
             "(?i)(^\s*url64bit\s*=\s*)('.*')"   = "`$1'$($Latest.URL64)'"
-            "(?i)(^\s*checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+            "(?i)(^\s*checksum64\s*=\s*)('.*')" = "`$1'$($Latest.ChkSum64)'"
         }
     }
 }
 
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
+
 function global:au_GetLatest {
-    $latest = Invoke-WebRequest -Uri $releases -headers @{"accept"="application/json"} `
-        | ConvertFrom-Json
+    $pkg = Invoke-RestMethod -Uri "$pkgurl"
+    write-debug "package: $pkg"
+    $file = Invoke-RestMethod -Uri "$pkgurl/versions/$($pkg.latest_version)/files" `
+        | foreach-object { if ($_.name -eq "jfrog.exe") { $_ } }
+    write-debug "file: $file"
 
     @{
-        URL64   = $url + $latest.tag_name + '%2Fjfrog-cli-windows-amd64%2Fjfrog.exe'
-        ChecksumType64 = 'sha512'
-        Version = $latest.tag_name
+        URL64   = $fileurl + $file.path
+        ChkSum64 = $file.sha256
+        Version = $pkg.latest_version
     }
 }
 
