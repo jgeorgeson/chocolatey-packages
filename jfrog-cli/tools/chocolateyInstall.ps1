@@ -5,8 +5,8 @@ $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $packageArgs = @{
   packageName            = 'jfrog-cli'
   fileType               = 'EXE'
-  url64bit               = 'https://bintray.com/jfrog/jfrog-cli-go/download_file?file_path=1.21.1%2Fjfrog-cli-windows-amd64%2Fjfrog.exe'
-  checksum64             = '019f66f78d5be1ae16d9519e916709a1c22ffaddbdf7c06416f9e76b9a4b9f4b'
+  url64bit               = 'https://dl.bintray.com/jfrog/jfrog-cli-go/1.22.1/jfrog-cli-windows-amd64/jfrog.exe'
+  checksum64             = 'f3b7be12d2abd751b2d389d7ce5ab1691d3847d0b79eb5e1f83606b5ebea34d7'
   checksumType64         = 'sha256'
   silentArgs             = ''
   validExitCodes         = @(0)
