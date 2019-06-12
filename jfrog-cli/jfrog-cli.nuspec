@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>jfrog-cli</id>
-    <version>1.25.0</version>
+    <version>1.26.0</version>
     <packageSourceUrl>https://github.com/jgeorgeson/chocolatey-packages</packageSourceUrl>
     <title>JFrog CLI</title>
     <authors>JFrog Ltd</authors>
